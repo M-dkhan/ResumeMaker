@@ -15,7 +15,7 @@ class WorkExperince(models.Model):
                           primary_key=True, editable=False)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 
 class Education(models.Model):
@@ -30,7 +30,7 @@ class Education(models.Model):
                           primary_key=True, editable=False)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 class language(models.Model):
     LEVEL = (
@@ -46,7 +46,7 @@ class language(models.Model):
     
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 class skill(models.Model):
     LEVEL = (
@@ -64,7 +64,7 @@ class skill(models.Model):
     
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 class Intrest(models.Model):
     custom_user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
@@ -73,7 +73,7 @@ class Intrest(models.Model):
                           primary_key=True, editable=False)
     
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 class Certification(models.Model):
     custom_user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
@@ -87,7 +87,7 @@ class Certification(models.Model):
                           primary_key=True, editable=False)
     
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 
 class Achivement(models.Model):
@@ -97,7 +97,7 @@ class Achivement(models.Model):
                           primary_key=True, editable=False)
     
     def __str__(self):
-        return self.id
+        return str(self.id)
     
 class CustomSection(models.Model):
     custom_user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
@@ -106,5 +106,5 @@ class CustomSection(models.Model):
                           primary_key=True, editable=False)
     
     def __str__(self):
-        return self.id
+        return str(self.id)
     
