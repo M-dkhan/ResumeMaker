@@ -17,6 +17,7 @@ class CustomUser(models.Model):
                           primary_key=True, editable=False)
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
+    phone_number = models.CharField(max_length=12)
     address = models.CharField(max_length=500)
     zipcode = models.IntegerField()
     city = models.CharField(max_length=200)
@@ -31,7 +32,6 @@ class CustomUser(models.Model):
     linked_in_link = models.CharField(max_length=500,blank=True, null=True)
     website_link = models.CharField(max_length=500, blank=True,null=True)
     resume_objective = models.TextField()
-    phone_number = models.IntegerField()
 
 
     def __str__(self):
