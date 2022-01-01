@@ -18,7 +18,7 @@ class WorkExperince(models.Model):
         return self.id
 
 
-class Education(mdoels.Model):
+class Education(models.Model):
     custom_user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
     degree = models.CharField(max_length=200)
     city = models.CharField(max_length=200)
