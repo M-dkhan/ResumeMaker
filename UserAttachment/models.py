@@ -31,3 +31,19 @@ class Education(mdoels.Model):
 
     def __str__(self):
         return self.id
+
+class language(models.Model):
+    LEVEL = (
+        ('native', 'Native'),
+        ('professional', 'Professional'),
+        ('medium', 'Good Working Knowledge'),
+    )
+    
+    name = models.CharField(max_length=200)
+    level = models.CharField(max_length=200, choices=LEVEL)
+    id = models.UUIDField(default=uuid.uuid4, unique=True,
+                          primary_key=True, editable=False)
+    
+
+    def __str__(self):
+        return self.id
