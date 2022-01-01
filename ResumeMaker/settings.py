@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Project Apps
     'CustomUser.apps.CustomuserConfig',
+    'UserAttachment.apps.UserattachmentConfig',
 ]
 
 MIDDLEWARE = [
