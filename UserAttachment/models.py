@@ -38,7 +38,7 @@ class language(models.Model):
         ('professional', 'Professional'),
         ('medium', 'Good Working Knowledge'),
     )
-    
+    custom_user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     level = models.CharField(max_length=200, choices=LEVEL)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
@@ -56,6 +56,7 @@ class skill(models.Model):
         ('experinced', 'Experinced'),
         ('expert', 'Expert'),
     )
+    custom_user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     level = models.CharField(max_length=200, choices=LEVEL)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
@@ -64,3 +65,46 @@ class skill(models.Model):
 
     def __str__(self):
         return self.id
+
+class Intrest(models.Model):
+    custom_user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+    hobby = models.CharField(max_length=200)
+    id = models.UUIDField(default=uuid.uuid4, unique=True,
+                          primary_key=True, editable=False)
+    
+    def __str__(self):
+        return self.id
+
+class Certification(models.Model):
+    custom_user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    institute = models.CharField(max_length=200)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    description = models.TextField()
+
+    id = models.UUIDField(default=uuid.uuid4, unique=True,
+                          primary_key=True, editable=False)
+    
+    def __str__(self):
+        return self.id
+
+
+class Achivement(models.Model):
+    custom_user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+    description = models.TextField()
+    id = models.UUIDField(default=uuid.uuid4, unique=True,
+                          primary_key=True, editable=False)
+    
+    def __str__(self):
+        return self.id
+    
+class CustomSection(models.Model):
+    custom_user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+    description = models.TextField()
+    id = models.UUIDField(default=uuid.uuid4, unique=True,
+                          primary_key=True, editable=False)
+    
+    def __str__(self):
+        return self.id
+    
