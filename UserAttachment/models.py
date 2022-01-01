@@ -47,3 +47,20 @@ class language(models.Model):
 
     def __str__(self):
         return self.id
+
+class skill(models.Model):
+    LEVEL = (
+        ('beginner', 'Beginner'),
+        ('intermediate', 'Intermediate'),
+        ('skillfull', 'Skillfull'),
+        ('experinced', 'Experinced'),
+        ('expert', 'Expert'),
+    )
+    title = models.CharField(max_length=200)
+    level = models.CharField(max_length=200, choices=LEVEL)
+    id = models.UUIDField(default=uuid.uuid4, unique=True,
+                          primary_key=True, editable=False)
+    
+
+    def __str__(self):
+        return self.id
