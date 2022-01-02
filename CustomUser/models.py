@@ -15,7 +15,7 @@ class CustomUser(models.Model):
     # user = 
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
-    featured_image = models.ImageField(upload_to=media/featured_images)
+    featured_image = models.ImageField(upload_to='media/featured_images')
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     phone_number = models.CharField(max_length=12)
