@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h3>Name - {{user.first_name}} {{user.last_name}}</h3>
+<h3>{{user.phone_number}}</h3>
+
+<h3>
+    {{user.address}}
+</h3>
+
+<h3>
+    {{user.city}} {{user.state}}
+</h3>
+
+<h3>
+    {{user.country}}
+</h3>
+
+<p>
+    {{user.resume_objective}}
+</p>
+
+{% endblock body %}
